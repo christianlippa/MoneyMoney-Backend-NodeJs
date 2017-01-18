@@ -1,0 +1,43 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title MoneyMoney - Profile
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap-theme.css')
+    link(rel='stylesheet', type='text/css', href='/css/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='/css/Site.css')
+    script(src='/js/modernizr-2.8.3.js')
+    script(src='/js/jquery-3.1.1.js')
+    script(src='/js/d3/d3.js')
+    script(src='https://cdn.auth0.com/js/lock/10.5/lock.min.js')
+  body.profile
+    #navbar
+    #main-content
+      h2 Profile
+      div  Welcome you have logged in 
+      #profileContent
+        .statContainer
+          | Come check out the graphs  
+          a(href='/Capstone2/userprofile/graphs.html')  Here! 
+          #totalBalanceContainer.alert-success.alert-danger
+            | $
+            label#totalBalance   
+          h2  To sum up where you have been spending your money
+          ul#spentList
+          h2  And where money has been coming in 
+          ul#incomeList
+          ul#mostIncome
+        #profsuggestion
+          #expenses
+            #rent
+            #entertainment
+            #food
+            #living
+            #transportation
+    footer.footer
+      script(src='/Capstone2/js/jquery-3.1.1.js')
+      script(src='/Capstone2/js/bootstrap.js')
+      script(src='/Capstone2/js/d3/d3.js')
+      script(src='https://cdn.auth0.com/js/lock/10.4/lock.min.js')
+      script(src='/Capstone2/js/MyScripts/Js.js')

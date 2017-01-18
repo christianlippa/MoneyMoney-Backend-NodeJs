@@ -1,0 +1,15 @@
+extends layout
+
+block content  
+  div(id="root" style="width: 280px; margin: 40px auto; padding: 10px;")
+
+  script.
+    var lock = new Auth0Lock('epRgjVF15vGKLJEL8EjVGV241IImwDW2', 'moneymoney.auth0.com', { auth: {
+          redirectUrl: 'https://moneymoney.zapto.org/callback'
+        , responseType: 'code'
+        , params: {
+          scope: 'openid name email picture'
+        }
+      }});
+    lock.show();
+  

@@ -1,0 +1,139 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title MoneyMoney - Graphs
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap-theme.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/Site.css')
+    script(src='/javascripts/modernizr-2.8.3.js')
+    script(src='/javascripts/jquery-3.1.1.js')
+    script(src='/javascripts/d3/d3.js')
+    script(src='https://cdn.auth0.com/js/lock/10.5/lock.min.js')
+    script(src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js')
+  style.
+    div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 60px;
+    height: 28px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    }
+  body.graphs.bg-warning
+    #navbar
+    #main-content.container.container-table
+      .row.vertical-center-row
+        br
+        h2
+          | Welcome 
+          span#nick.nickname
+        br
+        h2 Graphs
+        // -----------Chart        ------------------
+        .container
+          #chart
+            // this is where the magic happens
+        br
+        #totalBalanceContainer.alert-success.alert-danger
+          | $
+          label#totalBalance   
+        // ---------- End Chart    -----------------
+        // End of length
+        br
+        .container.container-fluid
+          .container.container-fluid.row
+            label#transContainer.col-md-6.bg-primary.img-rounded.text-center Transaction
+            label#graphContainer.col-md-6.bg-primary.img-rounded.text-center Graph
+        #transactionContainer.container
+          .row
+            #trantype.btn-group(data-toggle='buttons')
+              .col-md-6
+                label.btn.btn-primary.active
+                  input#radIncome(type='radio', name='trantype', value='income', autocomplete='off', checked='')
+                  |  Income
+              .col-md-6
+                label.btn.btn-primary
+                  input#radExpense(type='radio', name='trantype', value='expense', autocomplete='off')
+                  |  Expense
+          // Expense List
+          #expenseList(style='display:none')
+            .row
+              .col-md-10
+                #category.btn-group(data-toggle='buttons', name='category')
+                  .row.expenseRad
+              .col-md-2
+                | Please select the most accurate type of expense that this is.
+          // end expense
+          // Income List
+          #incomeList
+            .row
+              .col-md-10
+                #category.btn-group(data-toggle='buttons')
+                  .row.incomeRads
+              .col-md-2
+                | Please select the most accurate type of income that this is.
+          // Get description
+          .container.container-fluid
+            .row
+              label Description
+              input#description(type='text')
+            // Get an amount
+            .row
+              label Amount
+              input#amount(type='text')
+            button.btn-custom1(onclick='followTheMoney()') Insert Transaction
+            br
+        // End of transactioms
+        // Start of getting parameters for the graph
+        #graphSelectorContainer.container.container-fluid
+          .container.container-fluid
+            label.btn.btn-primary.btn-lg.img-rounded.text-center
+              input#incomeCb(name='incomeCB', type='checkbox', value='income', checked='checked')
+              |  Income
+            .row.incomeCbs
+              // lets create check boxes for the user to select what they want in the graphs
+          .container.container-fluid
+            label.btn.btn-primary.btn-lg
+              input#expenseCb(name='expenseCB', type='checkbox', value='expense')
+              |    Expense
+            .row.expenseCbs
+              // lets create check boxes for the user to select what they want in the graphs
+          .container-fluid
+            // Lengnth in months
+            .row
+              .btn-group(data-toggle='buttons')
+                .col-md-4
+                  label.btn.btn-primary.active
+                    input(type='radio', name='months', value='1', autocomplete='off')
+                    |  1 Month
+                .col-md-4
+                  label.btn.btn-primary
+                    input(type='radio', name='months', value='2', autocomplete='off')
+                    |  2 Months
+                .col-md-4
+                  label.btn.btn-primary
+                    input(type='radio', name='months', value='3', autocomplete='off')
+                    |  3 Months
+                .col-md-4
+                  label.btn.btn-primary
+                    input(type='radio', name='months', value='-1', autocomplete='off', checked='')
+                    |  All
+            br
+            br
+            // type of chart selection
+            // <button class="btn-custom1" onclick="makePie()"> Pie Graph</button>
+            button.btn-primary(onclick='makeBar()') Bar Graph
+            // end of type
+            div
+    footer.footer
+      script(src='/javascripts/jquery-3.1.1.js')
+      script(src='/javascripts/bootstrap.js')
+      script(src='/javascripts/d3/d3.js')
+      script(src='https://cdn.auth0.com/js/lock/10.4/lock.min.js')
+      script(src='/javascripts/MyScripts/Js.js')

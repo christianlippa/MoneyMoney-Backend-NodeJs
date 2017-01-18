@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title MoneyMoney - Profile
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap-theme.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/Site.css')
+    link(href='http://getbootstrap.com/examples/blog/blog.css', rel='stylesheet')
+    script(src='/javascripts/modernizr-2.8.3.js')
+    script(src='/javascripts/jquery-3.1.1.js')
+    script(src='/javascripts/d3/d3.js')
+    script(src='https://cdn.auth0.com/js/lock/10.5/lock.min.js')
+    script.
+      localStorage.setItem('idToken', '#{user.id_token}')
+      localStorage.setItem('userId', '#{user.id}')
+  body.profile.bg-warning
+    #navbar
+    #main-content
+      #profileContent.container.bg-warning
+        .blog-header
+          h2.blog-post-title Profile
+          .blog-main  Hi!
+        .row
+          .statContainer
+            #totalBalanceContainer.alert-success.alert-danger
+              | $
+              label#totalBalance
+            .col-m-5.blog-main.bg-warning
+              .container
+                h2.blog-header.blog-post-title  To sum up where you have been spending your money
+              ul#spentList
+            .col-m-5.blog-main.bg-info
+              .container
+                h2.blog-post-title  And where money has been coming in
+              ul#incomeList
+            .col-m-2.blog-main
+              ul#mostIncome
+          #profsuggestion
+            .container
+              h2.blog-post-title  Maybe we can help you out with some tips!
+              .container
+                #expenses.blog-main
+                  #rent.bg-info
+                  #entertainment.bg-success
+                  #food.bg-info
+                  #living.bg-success
+                  #transportation.bg-info
+    footer.footer
+      script(src='/javascripts/jquery-3.1.1.js')
+      script(src='/javascripts/bootstrap.js')
+      script(src='/javascripts/d3/d3.js')
+      script(src='https://cdn.auth0.com/js/lock/10.4/lock.min.js')
+      script(src='/javascripts/MyScripts/Js.js')

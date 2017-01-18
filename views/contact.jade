@@ -1,0 +1,83 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title MoneyMoney - About
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap-theme.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/Site.css')
+    script(src='/javascripts/modernizr-2.8.3.js')
+    script(src='/javascripts/jquery-3.1.1.js')
+    script(src='/javascripts/d3/d3.js')
+    script(src='https://cdn.auth0.com/js/lock/10.5/lock.min.js')
+    script(src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js')
+  body.about
+    #navbar
+    br
+    .container-fluid
+      .container.marketing
+        // Three columns of text below the carousel
+        .row
+          .col-lg-4
+            img.img-square(src='/images/transaction.png', alt='Transaction', width='360', height='180')
+            h2 Record Transactions!
+            p  The more you input the better we can track your finances and advise on
+            p
+              a.btn.btn-default(href='#transBlub', role='button') View details »
+          // /.col-lg-4
+          .col-lg-4
+            img.img-square(src='/images/Graph.png', alt='Graph', width='180', height='180')
+            h2 Graphs
+            p We can help visualize that for you!
+            p
+              a.btn.btn-default(href='#ezgraph', role='button') View details »
+          // /.col-lg-4
+          .col-lg-4
+            img.img-square(src='/images/security.png', alt='Expenses', width='240', height='180')
+            h2 Proven Security
+            p We'll push the beads on the abacus for you
+            p
+              a.btn.btn-default(href='#ezsecurity', role='button') View details »
+          // /.col-lg-4
+        // /.row
+        // START THE FEATURETTES
+        hr.featurette-divider
+        #transBlub.row.featurette
+          .col-md-7
+            h2.featurette-heading
+              | Transactions
+              span.text-muted  So easy!
+            p.lead
+              | We have simplified the transaction process for you, by keep each record categorized by easily identifiable and commonly used key words.
+          .col-md-5
+            img.featurette-image.img-responsive.center-block(src='/images/easy.png', alt='Chalk Board Easy')
+        hr.featurette-divider
+        #ezgraph.row.featurette
+          .col-md-7.col-md-push-5
+            h2.featurette-heading
+              | We hide the spreadsheets 
+              span.text-muted  Records can be boring
+            p.lead
+              | So we have replaced those spreadsheets with graphs! We will create graphs to help track up to 3 months worth of spending
+          .col-md-5.col-md-pull-7
+            img.featurette-image.img-responsive.center-block(src='/images/ezGraph.png', alt='Chalk Board Graph')
+        hr.featurette-divider
+        .row.featurette
+          .col-md-7
+            h2#ezsecurity.featurette-heading
+              | And lastly, this one. 
+              span.text-muted Checkmate.
+            p.lead
+              | We have taken your privacy and security, we are using the help of Auth0 security!
+              | You can read more about them 
+              a(href='https://auth0.com/')  here 
+          .col-md-5
+            img.featurette-image.img-responsive.center-block(src='/images/ezsecurity.png', alt='Auth0 Security')
+        hr.featurette-divider
+    footer.footer
+      script(src='/javascripts/jquery-3.1.1.js')
+      script(src='/javascripts/bootstrap.js')
+      script(src='/javascripts/d3/d3.js')
+      script(src='https://cdn.auth0.com/js/lock/10.4/lock.min.js')
+      script(src='/javascripts/MyScripts/Js.js')
